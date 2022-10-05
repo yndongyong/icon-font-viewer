@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.yndongyong.android.icon-font-viewer</id>
+    <name>Icon Font Viewer</name>
+    <vendor email="yndongyong@foxmail.com" url="https://github.com/yndongyong">Github yndongyong</vendor>
+
+    <description><![CDATA[
+    A Intellij(Android Studio) platform plugin to view true type font file(.ttf) that includes icon glyphs usually.<br>
+    <em></em>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.androidstudio</depends>
+    <!--<depends>org.jetbrains.android</depends>-->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <fileType name="IconFont" implementationClass="com.yndongyong.android.plugin.IconFontFileType" fieldName="INSTANCE"
+                  extensions="ttf" order="first"/>
+        <fileEditorProvider implementation="com.yndongyong.android.plugin.IconFontViewerProvider" />
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
